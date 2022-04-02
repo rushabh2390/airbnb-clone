@@ -1,0 +1,19 @@
+try {
+	await somefunction()
+	console.log("done")
+}
+catch(e) {
+	console.error(e)
+}
+
+
+function somefunction() {
+	return Promise((resolve, reject) => {
+		funcionsupportCallback(params, (err, res) {
+			if (!err) {
+				return resolve(res)
+			}
+			return reject(err)
+		})
+	})
+}

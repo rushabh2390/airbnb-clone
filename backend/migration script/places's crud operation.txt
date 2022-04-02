@@ -1,0 +1,43 @@
+user's crud operation
+models folder contains 2 models for user's crud 
+1. placeschema
+
+read request:
+ to get specific user details: 
+	http://localhost:9000/places/[username]
+ to get all users details:
+	http://localhost:9000/places/
+	
+to post create/register places:
+	http://localhost:9000/places/register/
+	input in json ->{"placename":"Sunny Bungalow in the City","summary":"a good place",
+"street":"223b bakrs street",
+"city":"london",
+"state": "London",
+"country":"Britain"
+}
+	place name should be unique.
+	for register placename, summary, city, state and country id require.
+	return created place document
+
+to post update in places:
+	http://localhost:9000/places/5f79abf6efb891031c960aa4
+	input in json ->{
+"placename":"Sunny Bungalows",
+"summary":"a good place",
+"street":"sadguru colony",
+"city":"Jamnagar",
+"state": "Gujarat",
+"country":"India"
+}
+	here placename will be taken to find document and update the street,summary,city,state and country according to input
+	return updated user document
+	
+to post delets in places:
+	http://localhost:9000/places/5f79abf6efb891031c960aa4
+	input in json ->{"placename":"Sunny Bungalows"}
+	here placename will be taken to find document and remove it
+	return message is place is not exist or place is deleted.
+
+
+5f79aea03adbc43840ebd5ac

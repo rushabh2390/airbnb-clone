@@ -1,0 +1,28 @@
+user's crud operation
+models folder contains 2 models for user's crud 
+1. userschema
+2. role schema
+
+read request:
+ to get specific user details: 
+	http://localhost:9000/users/[username]
+ to get all users details:
+	http://localhost:9000/users/
+	
+to post create/register users:
+	http://localhost:9000/users/register/
+	input in json ->{"username":"jack","role":"user","email":"abc@example.com","password":"jack"}
+	for register username, role, and password require.
+	return created user document
+
+to post update in users:
+	http://localhost:9000/users/update
+	input in json ->{"username":"jack","email":"abcdef@example.com","password":"hill","role":"user"}
+	here username will be taken to find document and update the password and role according to input
+	return updated user document
+	
+to post delets in users:
+	http://localhost:9000/users/delete
+	input in json ->{"username":"jack"}
+	here username will be taken to find document and remove it
+	return message is user is not exist or username is deleted.
