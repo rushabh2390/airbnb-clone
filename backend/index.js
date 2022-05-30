@@ -3,7 +3,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose= require('mongoose');
-const url = "mongodb://localhost/airbnbdb";
+const url = process.env.MONGO_URL || "mongodb://localhost/airbnbdb";
 const swaggerUi = require('swagger-ui-express'),
 swaggerDocument = require('./swagger.json');
 const  app = express();

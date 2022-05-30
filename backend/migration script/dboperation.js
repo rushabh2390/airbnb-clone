@@ -1,5 +1,6 @@
+require('dotenv').config();
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017"
+var url = process.env.MONGO_URI || "mongodb://username:password@mongodb:27017"
 var dbName="airbnbdb";
 
 var getid=(async ( collection,parameters) =>
@@ -13,7 +14,7 @@ var getid=(async ( collection,parameters) =>
     let db= await MongoClient.connect(url+"/" + dbName);
     let docs = await db.collection(collection).find({},fields).toArray();
     db.close();
-    
+
     return docs;
 });
 var insertuserdata=(async (users) =>

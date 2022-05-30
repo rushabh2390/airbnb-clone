@@ -1,9 +1,9 @@
 /*express server js*/
-
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose= require('mongoose');
-const url = process.env.MONGO_URI || "mongodb://localhost/airbnbdb";
+const url = process.env.MONGO_URL+"/airbnbdb" || "mongodb://username:password@mongodb:27017/airbnbdb";
 const swaggerUi = require('swagger-ui-express'),
 swaggerDocument = require('./swagger.json');
 const  app = express();
@@ -28,6 +28,8 @@ app.use((req, res, next) => {
   next();
 });
 app.use('/users',usersRouter);
+app.get('/', (req, res) => {
+})
 app.use('/places',placesRouter);
 app.use('/reviews',reviewsRouter);
 app.use('/searches',SearchRouter);

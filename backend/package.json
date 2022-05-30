@@ -17,6 +17,7 @@
     "csvtojson": "^2.0.10",
     "deasync": "^0.1.20",
     "dns": "^0.2.2",
+    "dotenv": "^16.0.1",
     "express": "^4.17.1",
     "express-validator": "^6.6.1",
     "geoip-lite": "^1.4.2",
